@@ -1,0 +1,275 @@
+@mixin app-custom-material-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  $config: mat-get-color-config($theme);
+
+  $is-dark-theme: map-get($config, is-dark);
+  // Extract the palettes you need from the theme definition.
+  $primary: map-get($config, primary);
+  $accent: map-get($config, accent);
+  $warn: map-get($config, warn);
+  $abp-primary-background: mat-color($primary);
+  $abp-primary-color: mat-color($primary, default-contrast);
+  $abp-accent-background: mat-color($accent);
+  $abp-accent-color: mat-color($accent, default-contrast);
+  $abp-warn-background: mat-color($warn);
+  $abp-warn-color: mat-color($warn, default-contrast);
+  $abp-background: mat-color($background, background);
+  $abp-background-darken: darken($abp-background, 10);
+  :root {
+    --abp-primary-background: #{$abp-primary-background};
+    --abp-primary-color: #{$abp-primary-color};
+    --abp-accent-background: #{$abp-accent-background};
+    --abp-accent-color: #{$abp-accent-color};
+    --abp-warn-background: #{$abp-warn-background};
+    --abp-warn-color: #{$abp-warn-color};
+    --abp-background: #{$abp-background};
+    --abp-background-darken: #{$abp-background-darken};
+
+    @if $is-dark-theme {
+    } @else {
+    }
+  }
+
+  .mat-actions {
+    background-color: mat-color($background, background) !important;
+    color: mat-color($foreground, text);
+    box-shadow: 0px 0px 0px 1px mat-color($foreground, divider) !important;
+  }
+  .mat-text {
+    &.secondary,
+    .secondary {
+      color: mat-color($foreground, secondary-text);
+    }
+  }
+  .mat-bg-primary,
+  .nav .primary {
+    background: mat-color($primary);
+    color: mat-color($primary, default-contrast);
+  }
+  .mat-color-primary {
+    color: mat-color($primary) !important;
+  }
+  .mat-bg-accent,
+  .nav .accent {
+    background: mat-color($accent) !important;
+    color: mat-color($accent, default-contrast) !important;
+  }
+  .mat-color-accent {
+    color: mat-color($accent) !important;
+  }
+  .mat-bg-warn,
+  .nav .warn {
+    background: mat-color($warn);
+    color: mat-color($warn, default-contrast);
+  }
+  .mat-color-warn {
+    color: mat-color($warn) !important;
+  }
+
+  .alert {
+    padding: 0.5em;
+    &.alert-primary {
+      background: mat-color($primary);
+      color: mat-color($primary, default-contrast);
+      border-color: mat-color($primary);
+    }
+
+    &.alert-secondary,
+    &.alert-accent {
+      background: mat-color($accent);
+      color: mat-color($accent, default-contrast);
+      border-color: mat-color($accent);
+    }
+    &.alert-info {
+      background: mat-color($mat-blue, 500);
+      color: mat-color(mat-palette($mat-blue, 500), default-contrast);
+      border-color: mat-color($mat-blue, 500);
+    }
+
+    &.alert-success {
+      background: mat-color(mat-palette($mat-green, 500));
+      color: mat-color(mat-palette($mat-green, 500), default-contrast);
+      border-color: mat-color(mat-palette($mat-green, 500));
+    }
+
+    &.alert-warning,
+    &.alert-warn {
+      background: mat-color(mat-palette($mat-orange, 500));
+      color: mat-color(mat-palette($mat-orange, 500), default-contrast);
+      border-color: mat-color(mat-palette($mat-orange, 500));
+    }
+
+    &.alert-danger,
+    &.alert-error,
+    &.alert-fatal {
+      background: mat-color(mat-palette($mat-red, 500));
+      color: mat-color(mat-palette($mat-red, 500), default-contrast);
+      border-color: mat-color(mat-palette($mat-red, 500));
+    }
+    &.alert-light {
+      background: mat-color(mat-palette($mat-red, 500));
+      color: mat-color(mat-palette($mat-red, 500), default-contrast);
+      border-color: mat-color(mat-palette($mat-red, 500));
+    }
+    &.alert-dark {
+      background: mat-color(mat-palette($mat-red, 500));
+      color: mat-color(mat-palette($mat-red, 500), default-contrast);
+      border-color: mat-color(mat-palette($mat-red, 500));
+    }
+  }
+
+  .color-primary {
+    color: mat-color($primary);
+  }
+
+  .color-secondary,
+  .color-accent {
+    color: mat-color($accent);
+  }
+  .color-info {
+    color: mat-color($mat-blue, 500);
+  }
+
+  .color-success {
+    color: mat-color(mat-palette($mat-green, 500));
+  }
+
+  .color-warning,
+  .color-warn {
+    color: mat-color(mat-palette($mat-orange, 500));
+  }
+
+  .color-danger,
+  .color-error,
+  .color-fatal {
+    color: mat-color(mat-palette($mat-red, 500));
+  }
+  .color-light {
+    color: mat-color(mat-palette($mat-red, 500));
+  }
+  .color-dark {
+    color: mat-color(mat-palette($mat-red, 500));
+  }
+  .mat-hover:hover {
+    &:not([disabled]) {
+      background: mat-color($background, "hover");
+      cursor: pointer;
+      position: relative;
+    }
+  }
+  // -----------------------------------------------------------------------------------------------------
+  // @ Avatar
+  // -----------------------------------------------------------------------------------------------------
+  .avatar {
+    color: map-get($foreground, text);
+  }
+
+  // -----------------------------------------------------------------------------------------------------
+  // @ Forms
+  // -----------------------------------------------------------------------------------------------------
+  .form-wrapper {
+    background-color: map-get($background, card);
+  }
+
+  .mat-divider-h,
+  .mat-divider-v {
+    background: map-get($foreground, divider);
+  }
+}
+
+.mat-divider-v {
+  width: 100%;
+  height: 1px;
+}
+
+.mat-divider-h {
+  width: 1px;
+  height: 100%;
+}
+.p-0 {
+  .mat-dialog-container {
+    padding: 0 !important;
+  }
+}
+.mat-dialog-container {
+  max-height: 100vh !important;
+}
+// .compact {
+//   .mat-form-field-wrapper {
+//     padding-bottom: 0 !important;
+//   }
+//   .mat-form-field-appearance-outline .mat-form-field-wrapper {
+//     margin: 0 !important;
+//   }
+//   .mat-form-field-infix {
+//     width: unset !important;
+//   }
+// }
+// .input-w-full {
+//   .mat-form-field {
+//     width: 100%;
+//   }
+// }
+
+// // .mat-raised-button {
+// //   padding: 4px 12px;
+// //   font-size: 0.9em;
+// // }
+
+// .mat-form-field-underline {
+//   top: 90%;
+// }
+// .mat-form-field-wrapper {
+//   padding: 0;
+// }
+// .form-field_without_pad .mat-form-field-flex {
+//   padding: 0 0.2rem !important;
+//   .mat-form-field-infix {
+//     padding: 0.4rem !important;
+//   }
+// }
+
+// .mat-mini-fab {
+//   position: absolute !important;
+// }
+// .mat-step-label.mat-step-label {
+//   text-overflow: inherit;
+//   white-space: normal;
+// }
+
+// .mat-tooltip {
+//   font-size: 0.8rem;
+// }
+
+// .mat-header-cell {
+//   font-size: 14px;
+//   font-weight: bold;
+// }
+
+.ng-select .ng-select-container {
+  padding-top: 6px !important;
+}
+.mat-paginator-page-size {
+  .mat-select {
+    padding: 0.5em 0 !important;
+  }
+  .mat-paginator-page-size-label {
+    align-self: center !important;
+  }
+  .mat-paginator-page-size-select {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .mat-paginator-page-size-select {
+    .mat-form-field-subscript-wrappe {
+      display: none !important;
+    }
+    .mat-form-field-wrapper,
+    .mat-form-field-infix {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+}

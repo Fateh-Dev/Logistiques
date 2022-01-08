@@ -1,0 +1,77 @@
+@mixin app-cards-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $is-dark: map-get($theme, is-dark);
+}
+
+// Message boxes
+.message-box {
+  padding: 16px;
+  background: #607d8b;
+  border-left: 6px solid #37474f;
+  color: rgba(255, 255, 255, 1);
+
+  &.error {
+    background: #ef5350;
+    border-left-color: #b71c1c;
+  }
+
+  &.warning {
+    background: #ffecb3;
+    border-left-color: #ffc107;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  &.success {
+    background: #4caf50;
+    border-left-color: #2e7d32;
+  }
+
+  &.info {
+    background: #b3e5fc;
+    border-left-color: #03a9f4;
+    color: rgba(0, 0, 0, 0.87);
+  }
+}
+[dir="rtl"] {
+  .message-box {
+    border-left: 0 hidden;
+
+    border-right: 6px solid #37474f;
+    &.error {
+      border-right-color: #b71c1c;
+    }
+
+    &.warning {
+      border-right-color: #ffc107;
+    }
+
+    &.success {
+      border-right-color: #2e7d32;
+    }
+
+    &.info {
+      border-right-color: #03a9f4;
+    }
+  }
+}
+
+.badge {
+  letter-spacing: normal;
+  white-space: nowrap;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1;
+  margin-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}

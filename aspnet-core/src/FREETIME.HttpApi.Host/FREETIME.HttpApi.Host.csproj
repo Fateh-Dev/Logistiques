@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>FREETIME</RootNamespace>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    <UserSecretsId>FREETIME-4681b4fd-151f-4221-84a4-929d86723e4c</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="1.4.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.*" />
+    <PackageReference Include="Volo.Abp.AspNetCore.MultiTenancy" Version="4.2.0" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="4.2.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic" Version="4.2.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Authentication.JwtBearer" Version="4.2.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="4.2.0" />
+    <PackageReference Include="Volo.Abp.Account.Web.IdentityServer" Version="4.2.0" />
+    <ProjectReference Include="..\AbpDz\IdentityServer\AbpDz.IdentityServer.csproj" />
+    <ProjectReference Include="..\AbpDz\Breeze\AbpDz.Breeze.csproj" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FREETIME.Application\FREETIME.Application.csproj" />
+    <ProjectReference Include="..\FREETIME.EntityFrameworkCore.DbMigrations\FREETIME.EntityFrameworkCore.DbMigrations.csproj" />
+    <ProjectReference Include="..\FREETIME.HttpApi\FREETIME.HttpApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.*" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson" Version="5.0.*" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <PackageReference Include="Volo.Abp.Swashbuckle" Version="4.2.0" />
+    <PackageReference Include="MiniProfiler.AspNetCore" Version="4.2.22" />
+    <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.2.22" />
+    <PackageReference Include="MiniProfiler.EntityFrameworkCore" Version="4.2.22" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="MiniProfiler.Providers.PostgreSql" Version="4.2.22" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.*" />
+
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+</Project>

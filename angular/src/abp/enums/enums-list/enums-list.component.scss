@@ -1,0 +1,12 @@
+.active {
+  font-weight: bold;
+  background: rgb(226, 226, 226);
+  border-left:solid 8px rgb(17, 143, 34)
+}
+.selectable {
+  cursor: pointer;
+}
+:host {
+  min-height: 100%;
+  height: 100%;
+}

@@ -1,0 +1,39 @@
+content {
+    position: relative;
+    display: flex;
+    z-index: 1;
+    flex: 1 0 auto;
+
+    > *:not(router-outlet) {
+        display: flex;
+        flex: 1 0 auto;
+        width: 100%;
+        min-width: 100%;
+    }
+    abp-dynamic-layout {
+        position: relative;
+        display: flex;
+        z-index: 1;
+        flex: 1 0 auto;
+    
+        > *:not(router-outlet) {
+            display: flex;
+            flex: 1 0 auto;
+            width: 100%;
+            min-width: 100%;
+        }
+    }
+    abp-replaceable-route-container {
+        position: relative;
+        display: flex;
+        z-index: 1;
+        flex: 1 0 auto;
+    
+        > *:not(router-outlet) {
+            display: flex;
+            flex: 1 0 auto;
+            width: 100%;
+            min-width: 100%;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<ng-container  *ngIf="ready$ | async"
+  ><fuse-progress-bar></fuse-progress-bar>
+  <ng-container [ngSwitch]="fuseConfig.layout.style">
+    <vertical-layout-1 *ngSwitchCase="'vertical-layout-1'"></vertical-layout-1>
+    <vertical-layout-2 *ngSwitchCase="'vertical-layout-2'"></vertical-layout-2>
+    <vertical-layout-3 *ngSwitchCase="'vertical-layout-3'"></vertical-layout-3>
+    <horizontal-layout-1
+      *ngSwitchCase="'horizontal-layout-1'"
+    ></horizontal-layout-1>
+  </ng-container>
+
+  <fuse-sidebar
+    name="themeOptionsPanel"
+    class="theme-options-sidebar"
+    position="right"
+    [invisibleOverlay]="true"
+  >
+    <fuse-theme-options></fuse-theme-options>
+  </fuse-sidebar>
+</ng-container>

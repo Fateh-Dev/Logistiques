@@ -1,0 +1,59 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": false,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": ["esnext", "dom"],
+    "paths": {
+      "@abpdz/ng.core": ["src/abp/core/public-api.ts"],
+      "@ngx-translate/core": ["src/abp/core/@ngx-translate"],
+      "@abpdz/ng.account": ["src/abp/account/public-api.ts"],
+      "@abpdz/ng.account/config": ["src/abp/account-config/public-api.ts"],
+      "@abpdz/ng.map-view": ["src/abp/map-view/public-api.ts"],
+      "@abpdz/ng.maps/config": ["src/abp/map-view-config/index.ts"],
+      "@abpdz/ng.identity/config": ["src/abp/identity-config/public-api.ts"],
+      "@abpdz/ng.identity": ["src/abp/identity/public-api.ts"],
+      "@abpdz/ng.theme.basic": ["src/abp/theme.basic/public-api.ts"],
+      "@abpdz/ng.theme.shared": ["src/abp/theme.shared/public-api.ts"],
+      "@abpdz/ng.theme.shared/*": ["src/abp/theme.shared/*"],
+      "@abpdz/ng.permission-management/config": [
+        "src/abp/permission-management-config/public-api.ts"
+      ],
+      "@abpdz/ng.permission-management": [
+        "src/abp/permission-management/public-api.ts"
+      ],
+      "@abpdz/compat": ["src/abp/compat"],
+      "@abpdz/ng.setting-management": [
+        "src/abp/setting-management/public-api.ts"
+      ],
+      "@abpdz/ng.setting-management/config": [
+        "src/abp/setting-management-config/public-api.ts"
+      ],
+      "@abpdz/ng.*": ["src/abp/*"],
+      "@module/*": ["src/modules/*"],
+      "@api-proxy/*": ["src/api/*"],
+      "@fuse": ["src/@fuse/"],
+      "@fuse/*": ["src/@fuse/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "disableTypeScriptVersionCheck": true,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

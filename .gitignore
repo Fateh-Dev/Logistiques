@@ -1,0 +1,7 @@
+aspnet-core/src/FREETIME.HttpApi.Host/wwwroot/libs/
+tmp
+aspnet-core/src/FREETIME.IdentityServer/wwwroot/libs
+debug.log
+tempkey.jwk
+angular/package-lock.json
+*.db
